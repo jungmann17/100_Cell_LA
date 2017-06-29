@@ -1,0 +1,13 @@
+#!/bin/sh
+if test "x${NRNHOME}" = "x" ; then
+	NRNHOME="/group/rcworkshop1/neuron_python"
+fi
+if test "x${NRNBIN}" = "x" ; then
+	NRNBIN="/group/rcworkshop1/neuron_python/bin/"
+fi
+if test "" = "yes" ; then
+	NRNIV="${NRNBIN}nrniv.app/Contents/MacOS/nrniv"
+else
+	NRNIV="${NRNBIN}nrniv"
+fi
+"${NRNIV}" -dll "/home/latimerb/data/netpyne/100_Cell/x86_64/.libs/libnrnmech.so" "$@"
